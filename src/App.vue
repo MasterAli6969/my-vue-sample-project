@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <MyBlock :imageUrl="imageUrl" :items="listItems" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyBlock from "./components/MyBlock.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { MyBlock },
+  data() {
+    return {
+      imageUrl: "https://example.com/image.jpg",
+      listItems: [
+        { id: 1, text: "Пункт 1" },
+        { id: 2, text: "Пункт 2" },
+        { id: 3, text: "Пункт 3" },
+      ],
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
